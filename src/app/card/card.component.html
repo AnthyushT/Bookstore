@@ -1,0 +1,10 @@
+<div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+            <img [src]="book?.image" style="height: 200px; width: 250px;" class="card-img-top img-fluid" alt="..." />
+            <h6 class="card-title text-dark" style="font-family:Arial,sans-serif;font-weight: 900;">{{ book?.title | slice : 0 : 20 }}..</h6>
+            <h6 class="card-text text-secondary"><i class="fa-solid fa-pen-nib"></i> {{ book?.author | slice : 0 : 50 }}</h6>
+            <button (click)="addToCart(book!)" type="button" class="w-50 btn btn-sm btn-outline-success">${{roundOff(book?.price?.value) || 'Price not available'}} <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+    </div>
+</div>

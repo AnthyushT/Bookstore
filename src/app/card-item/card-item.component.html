@@ -1,0 +1,11 @@
+<li class="list-group-item d-flex justify-content-between align-items-start">
+  <div class="ms-2 me-auto">
+    <img [src]="item?.image" style="height: 60px; width: 80px;" class="rounded-3 img-fluid" alt="..." />
+    <div class="fw-bold">{{item?.title | slice : 0 : 15}}..</div>
+    ${{roundOff(item?.price?.value) || 'Price not available'}}
+  </div>
+  <button class="badge bg-dark" (click)="decreaseQuantityCart(item?.id!)">-</button>
+  <button class="badge bg-dark"> {{item?.quantity}}</button>
+  <button class="badge bg-dark" (click)="increaseQuantityCart(item?.id!)">+</button>
+  <button class="ms-2" (click)="removeProduct(item?.id!)"><i class="fa-solid fa-trash"></i></button>
+</li>
